@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "Job"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "skills": {
+      "collection": "skill",
+      "via": "jobs",
+      "dominant": true
+    },
+    "company": {
+      "type": "string"
+    }
+  }
+}
