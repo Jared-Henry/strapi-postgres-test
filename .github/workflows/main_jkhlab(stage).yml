@@ -53,6 +53,9 @@ jobs:
         with:
           name: node-app
 
+      - name: Unzip
+        run: unzip release.zip -d release
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -60,4 +63,4 @@ jobs:
           app-name: 'jkhlab'
           slot-name: 'stage'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_90AA6099A5514029977A591656DB7C40 }}
-          package: release.zip
+          package: ./release
